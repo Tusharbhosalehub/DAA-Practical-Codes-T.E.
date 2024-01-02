@@ -13,3 +13,28 @@ int knapSack(int W, int wt[], int val[], int n) {
             val[n - 1] + knapSack(W - wt[n - 1], wt, val, n - 1),
             knapSack(W, wt, val, n - 1));
 }
+int main() {
+    int W, n;
+
+    cout << "Enter the knapsack capacity (W): ";
+    cin >> W;
+
+    cout << "Enter the number of items (n): ";
+    cin >> n;
+
+    int profit[n], weight[n];
+
+    cout << "Enter the profits of the items: ";
+    for (int i = 0; i < n; i++) {
+        cin >> profit[i];
+    }
+
+    cout << "Enter the weights of the items: ";
+    for (int i = 0; i < n; i++) {
+        cin >> weight[i];
+    }
+
+    cout << "Maximum value in the knapsack: " << knapSack(W, weight, profit, n) << endl;
+
+    return 0;
+}*/

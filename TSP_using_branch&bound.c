@@ -32,4 +32,25 @@ void tspBranchAndBound(int level, int cost, int path[N], int bestPath[N], int& m
         swap(path[level], path[i]);
     }
 }
+int main() {
+    int path[N];
+    for (int i = 0; i < N; i++) {
+        path[i] = i;
+    }
+
+    int bestPath[N];
+    int minCost = INF;
+
+    tspBranchAndBound(1, 0, path, bestPath, minCost);
+
+    cout << "Optimal TSP tour: ";
+    for (int i = 0; i < N; i++) {
+        cout << bestPath[i] << " -> ";
+    }
+    cout << bestPath[0] << endl;
+
+    cout << "Optimal TSP tour cost: " << minCost << endl;
+
+    return 0;
+}
 

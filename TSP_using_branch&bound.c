@@ -21,3 +21,15 @@ void tspBranchAndBound(int level, int cost, int path[N], int bestPath[N], int& m
             }
         }
         return;
+ }
+
+    for (int i = level; i < N; i++) {
+        swap(path[level], path[i]);
+        int bound = cost + distanceMatrix[path[level - 1]][path[level]];
+        if (bound < minCost) {
+            tspBranchAndBound(level + 1, bound, path, bestPath, minCost);
+        }
+        swap(path[level], path[i]);
+    }
+}
+

@@ -73,3 +73,11 @@ void findOptimalPath(int* path, int& minCost) {
         path[i] = minPath[i];
     }
 }
+    // Deallocate memory for cost matrix
+    for (int i = 0; i < n; i++) {
+        delete[] cost[i];
+    }
+    delete[] cost;
+
+    return 0;
+}

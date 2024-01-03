@@ -35,6 +35,39 @@ void findOptimalPath(int* path, int& minCost) {
             }
         }
     }
+    int main() {
+    cout << "Enter the number of cities: ";
+    cin >> n;
+
+    // Allocate memory for cost matrix
+    cost = new int*[n];
+    for (int i = 0; i < n; i++) {
+        cost[i] = new int[n];
+    }
+
+    cout << "Enter the cost matrix:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> cost[i][j];
+        }
+    }
+
+    int path[n];
+    for (int i = 0; i < n; i++) {
+        path[i] = i;
+    }
+
+    int minCost;
+    findOptimalPath(path, minCost);
+
+    cout << "Optimal Path: ";
+    for (int i = 0; i < n; i++) {
+        cout << path[i] << " ";
+    }
+    cout << path[0] << endl;
+
+    cout << "Total Cost: " << minCost << endl;
+
 
     for (int i = 0; i < n; i++) {
         path[i] = minPath[i];

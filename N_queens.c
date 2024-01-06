@@ -44,3 +44,19 @@ bool solveNQueensUtil(vector<int>& board, int row) {
 
     return res;
 }
+void solveNQueens(int n) {
+    vector<int> board(n, -1);
+    if (!solveNQueensUtil(board, 0)) {
+        cout << "Solution does not exist." << endl;
+    }
+}
+
+int main() {
+    int n;
+    cout << "Enter the value of N: ";
+    cin >> n;
+
+    solveNQueens(n);
+
+    return 0;
+}
